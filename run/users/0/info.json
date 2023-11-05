@@ -1,0 +1,12 @@
+{
+  "nickname": "用户",
+  "password": "password",
+  "timestamp": 0,
+  "description": "你好，这里是简介！",
+  "posts": [{
+    "type": "video",
+    "id": "0"
+  }],
+  "follows": [],
+  "fans": []
+}

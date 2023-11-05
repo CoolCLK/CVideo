@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <title th:text="${video.title} + _CVideo"></title>
+        <link rel="stylesheet" type="text/css" href="/css/banner.css">
+        <script type="module">
+            import { setupBanner } from '/js/banner.js';
+
+            window.onload = function() {
+                setupBanner();
+            }
+        </script>
+        <style>
+            body {
+                display: flex;
+                flex-flow: column;
+                margin: 0;
+                line-height: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="flex: 1; width: 100%;">
+            <div style="margin: 1em;">
+                <video width="320" height="240" controls>
+                    <source th:src="'/api/video/' + ${video.getId()} + '/file/' + ${video.videoFile.getName()}" type="video/mp4" src="">
+                    您的浏览器不支持 video 标签。
+                </video>
+                <div th:utext="${video.description}">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

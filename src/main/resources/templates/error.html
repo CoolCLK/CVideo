@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <title>出错啦! - CVideo</title>
+        <link rel="stylesheet" type="text/css" href="/css/banner.css" charset="UTF-8">
+        <script type="module">
+            import * as banner from "/js/banner.js";
+
+            window.onload = function() {
+                banner.setupBanner();
+            }
+        </script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .error-container {
+                width: 980px;
+                margin: 30px auto 30px;
+                background: #fff;
+                border-radius: 10px;
+            }
+
+            .error-panel {
+                overflow: hidden;
+                padding: 30px;
+                text-align: center;
+            }
+
+            .error-panel .rollback-btn {
+                display: inline-block;
+                line-height: 40px;
+                vertical-align: middle;
+                text-align: center;
+                background: #00A1D6;
+                color: #fff;
+                border-radius: 4px;
+                float: right;
+                font-size: 16px;
+                transition: 0.2s;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body style="background: #F4F5F7;">
+        <div class="error-container">
+            <div class="error-panel">
+                <h2 style="color: #00A1D6; margin: 3em;">肥肠抱歉，你要找的页面不见了</h2>
+                <div style="text-align: center; padding: 0 0 40px 0;">
+                    <a class="rollback-btn" style="padding: 0 20px; float: none;" onclick="
+                    if (document.referrer !== '') {
+                        history.go(-1);
+                        return;
+                    }
+                    window.location.href = '/';">返回上一页</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
